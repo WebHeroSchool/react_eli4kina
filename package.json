@@ -1,0 +1,14 @@
+{
+  "name": "react_eli4kina",
+  "version": "1.0.0",
+  "description": "first project react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"say": "echo hello",
+	"create": "mkdir build",
+	"del": "rm -rf build"
+  },
+  "author": "Elvira Snezhkova",
+  "license": "ISC"
+}
