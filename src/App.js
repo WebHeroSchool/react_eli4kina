@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { count, length } from './number';
 
 const day=14;
 const dayOfWeek='Tuesday';
@@ -16,23 +17,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <div style={{textAlign: 'left'}}>
-        <p style={{
-          fontFamily: 'Arial',
-          fontSize: '20px',
-          color: 'rgb(105, 198, 226)'
-          }}>добавление в разметку объекта style;</p>
-        <p>вывода значения переменной: {dayOfWeek};</p>
-        <p>вывода числа: {14};</p>
-        <p>вывода результата арифметической операции: {currentYear - yearOfBirth};</p>
-        <p>вывода результата логической операции: {day && 'четырнадцать'};</p>
-        <p>использования тернарного условия:  {flag ? 'Flag is true' : 'Flag is false'};</p>
-        <p>вывода undefined, null, false и true:</p>
-        <ul>
-          <li>undefined = {undefined}</li>
-          <li>null = {null}</li>
-          <li>false = {false}</li>
-          <li>true = {true}</li>
-        </ul>
+        <p>Произвндение чисел = {count*length}</p>
         </div>
 
         
