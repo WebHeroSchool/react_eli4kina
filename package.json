@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"say": "echo hello",
-	"create": "mkdir build",
-	"del": "rm -rf build"
+    "say": "echo hello",
+    "create": "mkdir build",
+    "del": "rm -rf build"
   },
   "author": "Elvira Snezhkova",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
