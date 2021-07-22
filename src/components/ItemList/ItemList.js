@@ -1,8 +1,9 @@
 import React from 'react';
 import Item from '../Item/Item';
-const ItemList = () => (
+
+const ItemList = ( {todoItem} ) => (
 <div>
-  <Item />
+  <Item todoItems = {todoItem} />
 </div>
 );
 export default ItemList;

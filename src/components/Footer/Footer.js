@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-let count=3;
-const Footer = () => (
+const Footer = ( {count} ) => (
   <footer>
   <div> {count} items left</div>
   <button>All</button>
