@@ -2,7 +2,7 @@ import React from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
-import './App.css';
+import styles from './App.module.css';
 
 
 
@@ -20,8 +20,8 @@ const App = () => {
   ];
   
   return (
-  <div className="wrapper">
-    <h2 className="wrapper__title">Todos</h2>
+  <div className={styles.wrapper}>
+    <h2 className={styles.title}>Todos</h2>
     <InputItem />
     <ItemList todoItems = {todoItems} />
     <Footer count={3} />
