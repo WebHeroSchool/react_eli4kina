@@ -1,13 +1,13 @@
 import React from 'react';
-import './Footer.css';
+import  styles from  './Footer.module.css';
 
 const Footer = ( {count} ) => (
-  <footer className="footer">
+  <footer className={styles.footer}>
   <div> {count} items left</div>
-  <button className="footer__btn">All</button>
-  <button className="footer__btn">Active</button>
-  <button className="footer__btn">Completed</button>
-  <button className="footer__btn">Clear completed</button>
+  <button className={styles.btn}>All</button>
+  <button className={styles.btn}>Active</button>
+  <button className={styles.btn}>Completed</button>
+  <button className={styles.btn}>Clear completed</button>
 </footer>	
 );
 
