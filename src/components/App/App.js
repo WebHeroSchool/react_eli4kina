@@ -9,13 +9,16 @@ import styles from './App.module.css';
 const App = () => {
   const todoItems = [
     {
-      value: 'Сделать зарядку'
+      value: 'Сделать зарядку',
+      isDone: true
     },
     {
-      value: 'Забрать пальто из химчистки'
+      value: 'Забрать пальто из химчистки',
+      isDone: false
     },
     {
-      value: 'Отвезти кота в вет клинику'
+      value: 'Отвезти кота в вет клинику',
+      isDone: false
     }
   ];
   
