@@ -4,8 +4,6 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-
-
 const App = () => {
   const todoItems = [
     {
@@ -28,6 +26,7 @@ const App = () => {
     <InputItem />
     <ItemList todoItems = {todoItems} />
     <Footer count={3} />
-  </div>);
+  </div>
+  );
 }
 export default App;
