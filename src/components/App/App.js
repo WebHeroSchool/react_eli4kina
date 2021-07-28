@@ -9,20 +9,38 @@ class App extends React.Component {
     todoItems: [
       {
         value: 'Сделать зарядку',
-        isDone: true
+        isDone: true,
+        id: 1
       },
       {
         value: 'Забрать пальто из химчистки',
-        isDone: false
+        isDone: false,
+        id: 2
       },
       {
         value: 'Отвезти кота в вет клинику',
-        isDone: false
+        isDone: false,
+        id: 3
       }
-    ]
+    ],
+
+    count: 3
   };
 
-  onClickDone = isDone => console.log(isDone);
+  onClickDone = id => {
+    const newItemList = this.state.todoItems.map(item => {
+      let newItem = { ...item };
+      console.log(newItem);
+
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+
+      return newItem;
+    });
+
+    this.setState({ todoItems: newItemList });
+  };
 
   render() {    
     return (
@@ -30,7 +48,7 @@ class App extends React.Component {
       <h2 className={styles.title}>Todos</h2>
       <InputItem />
       <ItemList todoItems={this.state.todoItems} onClickDone={this.onClickDone} />
-      <Footer count={3} />
+      <Footer count={this.state.count} />
     </div>
     );
   }

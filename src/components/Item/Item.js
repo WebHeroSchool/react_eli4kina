@@ -6,13 +6,14 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const Item = ( {value, isDone, onClickDone} ) => (
+const Item = ( {value, isDone, id, onClickDone} ) => (
   <div>
     <Checkbox 
       inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
       color="primary"
       checked={isDone}
-      onClick={() => onClickDone(isDone)}
+      tabIndex={-1}
+      onClick={() => onClickDone(id)}
     />
     <span 
       className={
