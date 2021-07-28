@@ -2,7 +2,6 @@ import React from 'react';
 import styles from  './Footer.module.css';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { purple } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
 
 const theme = createTheme({
