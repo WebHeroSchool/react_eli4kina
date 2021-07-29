@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const Item = ( {value, isDone, id, onClickDone} ) => (
+const Item = ( {value, isDone, id, onClickDone, onClickDelete} ) => (
   <div>
     <Checkbox 
       inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
@@ -25,7 +25,7 @@ const Item = ( {value, isDone, id, onClickDone} ) => (
       {value}
     </span>
     <ListItemSecondaryAction>
-      <IconButton aria-label="delete" edge="end">
+      <IconButton aria-label="delete" edge="end" onClick={() => onClickDelete(id)}>
         <DeleteOutlineIcon fontSize="small" />
       </IconButton>
     </ListItemSecondaryAction>
