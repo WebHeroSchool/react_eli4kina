@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from  './Footer.module.css';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -31,5 +32,9 @@ const Footer = ( {count} ) => (
 Footer.defaultProps = {
   count: 0
 };
+
+Footer.propTypes = {
+  count: PropTypes.number
+}
 
 export default Footer;

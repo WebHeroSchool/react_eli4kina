@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Item.module.css';
 import classnames from 'classnames';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -37,6 +38,14 @@ const Item = ( {value, isDone, id, onClickDone, onClickDelete} ) => (
 Item.defaultProps = {
   value: 'Задача отсутствует',
   isDone: false
+};
+
+Item.propTypes = {
+  value: PropTypes.string,
+  isDone: PropTypes.bool,
+  id: PropTypes.number,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired,
 };
 
 export default Item;
