@@ -42,7 +42,7 @@ class App extends React.Component {
   };
 
   onClickDelete = id => {
-    const newItemList = this.state.todoItems.filter(item => item.id != id);
+    const newItemList = this.state.todoItems.filter(item => item.id !== id);
     this.setState({ todoItems: newItemList });
   }
 

@@ -5,7 +5,7 @@ import  styles from  './ItemList.module.css';
 const ItemList = ( {todoItems, onClickDone, onClickDelete}) => (
   <ol className={styles.todoList}>
     {todoItems.map(item => 
-    <li key={item.value}>
+    <li key={item.id}>
       <Item 
         value={item.value} 
         isDone={item.isDone} 

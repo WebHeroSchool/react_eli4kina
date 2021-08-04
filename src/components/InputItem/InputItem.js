@@ -8,21 +8,17 @@ class InputItem extends React.Component {
   state = {
     inputValue: '',
     errorText: '',
-
+    hasError: false
   };
 
   onButtonClick = () => {
 
-    if(this.state.inputValue == '') {
-      this.setState({errorText: "Введите не пустое значение"});
+    if(this.state.inputValue === '') {
+      this.setState({errorText: "Введите не пустое значение", hasError: true});
     } else {
-      this.setState({
-        inputValue: ''
-      });
-  
+      this.setState({ inputValue: '' });
       this.props.onClickAdd(this.state.inputValue);
     }
-
   }
 
   render() {
@@ -31,7 +27,7 @@ class InputItem extends React.Component {
     return (
       <div>
         <TextField
-          error={this.state.errorText} 
+          error={this.state.hasError} 
           id="standard-basic" 
           label="Введи новое дело" 
           variant="filled"
@@ -39,7 +35,7 @@ class InputItem extends React.Component {
           fullWidth
           value={this.state.inputValue}
           onChange={ event => this.setState({ inputValue: event.target.value.toUpperCase()})}
-          onFocus={ event => this.setState({ errorText: '' })}
+          onFocus={ event => this.setState({ errorText: '', hasError: false })}
 
           InputProps={{
             endAdornment: (
@@ -51,7 +47,6 @@ class InputItem extends React.Component {
         />
       </div>
     );
-
   }
 };
 
