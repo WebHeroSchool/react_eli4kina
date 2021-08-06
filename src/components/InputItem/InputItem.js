@@ -1,54 +1,60 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 
-class InputItem extends React.Component {
+const InputItem = ({ onClickAdd }) => {
 
-  state = {
+  const initialState = {
     inputValue: '',
     errorText: '',
     hasError: false
   };
 
-  onButtonClick = () => {
+  const [inputValue,  setInputValue] = useState(initialState.inputValue);
+  const [errorText,  setErrorText] = useState(initialState.errorText);
+  const [hasError,  setHasError] = useState(initialState.hasError);
 
-    if(this.state.inputValue === '') {
-      this.setState({errorText: "Введите не пустое значение", hasError: true});
+  const onButtonClick = () => {
+
+    if(inputValue === '') {
+      setErrorText("Введите не пустое значение");
+      setHasError(true);
     } else {
-      this.setState({ inputValue: '' });
-      this.props.onClickAdd(this.state.inputValue);
+      setInputValue('');
+      onClickAdd(inputValue);
     }
   }
 
-  render() {
-    const { onClickAdd } = this.props;
+  useEffect (() => {
+    console.log(`длинна введеной строки = ${ inputValue.length }`)
+  }, [inputValue]);
 
-    return (
-      <div>
-        <TextField
-          error={this.state.hasError} 
-          id="standard-basic" 
-          label="Введи новое дело" 
-          variant="filled"
-          helperText={this.state.errorText}
-          fullWidth
-          value={this.state.inputValue}
-          onChange={ event => this.setState({ inputValue: event.target.value.toUpperCase()})}
-          onFocus={ event => this.setState({ errorText: '', hasError: false })}
+  return (
+    <div>
+      <TextField
+        error={ hasError } 
+        id="standard-basic" 
+        label="Введи новое дело" 
+        variant="filled"
+        helperText={ errorText }
+        fullWidth
+        value={ inputValue  }
+        onChange={ event => setInputValue(event.target.value.toUpperCase())}
+        onFocus={ event => (setErrorText(''), setHasError(false)) }
 
-          InputProps={{
-            endAdornment: (
-              <IconButton  size="small" aria-label="add" onClick={this.onButtonClick}>
-                <AddIcon />
-              </IconButton>
-            ),
-          }}
-        />
-      </div>
-    );
-  }
+        InputProps={{
+          endAdornment: (
+            <IconButton  size="small" aria-label="add" onClick={ onButtonClick }>
+              <AddIcon />
+            </IconButton>
+          ),
+        }}
+      />
+    </div>
+  )
 };
 
 InputItem.propTypes = {
