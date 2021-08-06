@@ -44,6 +44,7 @@ class App extends React.Component {
   onClickDelete = id => {
     const newItemList = this.state.todoItems.filter(item => item.id !== id);
     this.setState({ todoItems: newItemList });
+    this.setState({count: newItemList.length});
   }
 
   onClickAdd = value => {
@@ -55,7 +56,7 @@ class App extends React.Component {
           id: this.state.count + 1 
         }
       ];
-      const newCount = this.state.count + 1; 
+      const newCount = newItemlist.length; 
 
       this.setState({ todoItems: newItemlist,  count: newCount});
   };

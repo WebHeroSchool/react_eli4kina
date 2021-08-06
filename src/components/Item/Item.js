@@ -9,14 +9,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 class Item extends React.Component{
 
-  componentDidMount() {
-    this.timerId = setInterval(() => console.log('Компонент с id = ', this.props.id), 3000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
-
   render() {
     const {value, isDone, id, onClickDone, onClickDelete } = this.props;
 
