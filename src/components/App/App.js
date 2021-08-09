@@ -15,7 +15,7 @@ const App =  () => (
      <Router>
         <div>
           <Paper className={styles.menu}>
-          <MenuList id="simple-menu" autoWidth={false}>
+          <MenuList id="simple-menu">
             <Link to ='/'><MenuItem className={styles.item} >Обо Мне</MenuItem></Link> 
             <Link to ='/contacts'><MenuItem className={styles.item} >Контакты</MenuItem></Link> 
             <Link to ='/todo'><MenuItem className={styles.item} >Мои дела</MenuItem></Link>

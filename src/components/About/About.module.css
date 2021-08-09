@@ -2,4 +2,27 @@
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.content {
+  display: flex;
+}
+
+.avatar {
+  margin: 30px 30px;
+  width: 300px;
+  height: 300px;
+}
+
+.repoListHeading {
+  margin-top: 60px;
+  font: 500 20px/24px 'Verdana', Arial, sans-serif;
+  color: rgb(7, 13, 99);
 }
