@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.12.2",
+    "@octokit/rest": "^18.9.0",
     "classnames": "^2.3.1"
   }
 }
