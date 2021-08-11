@@ -43,11 +43,10 @@ const About = () => {
         setIsLoading(false);
       })
       .catch(err => {
-        setErrMsg(err.message);
+        setErrMsg(`Не удалось получить данные о пользователе ${nik}. Error text: ${err.message}`);
         setIsLoading(false);
         setFetchReposFailure(true);
-      })
-      console.log(errMsg);
+      });
 
     if(!fetchReposFailure) {
       octokit.users.getByUsername({username: nik})
@@ -56,6 +55,12 @@ const About = () => {
           setHtmlUrl(response.data.html_url);
           setAvatarUrl(response.data.avatar_url);
         })
+        .catch(err => {
+          setErrMsg(`Не удалось получить данные о пользователе ${nik}. Error text: ${err.message}`);
+          setIsLoading(false);
+          setFetchReposFailure(true);
+        });
+
     }
   }, [isLoading]);
   
